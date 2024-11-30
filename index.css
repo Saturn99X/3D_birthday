@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1d2671, #c33764);
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+;
+  }
+
+  .container{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 35%;
+    height: 50%;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: 800;
+    margin: 50px;
+  }
+
+  #child1{
+    position: absolute;
+    background-color: aliceblue;
+    color: black;
+    padding: 6px;
+    border-radius: 10px;
+    margin: 10px;
+    width: 90%;
+    height: 69%;
+    display: flex;
+    text-align: center;
+    top: 0%
+  }
+
+  #child2{
+    position: absolute;
+    background-color: aliceblue;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    width: 90%;
+    height: 20%;
+    display: flex;
+    text-align: center;
+    top: 77%;
+  }
+  #ttsend{
+    background: linear-gradient(135deg, #00c851, #33b5e5);
+    color: aliceblue;
+    text-align: center;
+    border: 1.5px solid #33b5e5;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+  }
+
+@media (max-width: 768px) {
+    .floating-cube {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+    }
+
+    .cube {
+        transform: rotateX(20deg) rotateY(20deg);
+    }
+
+    .birthday-text {
+        font-size: 3rem;
+        top: 20%;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-cube {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+
+    .cube {
+        transform: rotateX(10deg) rotateY(10deg);
+    }
+
+    .birthday-text {
+        font-size: 2rem;
+        top: 15%;
+    }
+}
+
+@media (min-width: 769px) {
+    #nelly {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+  #nelly{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: flex;
+    position: relative;
+  }
+
+  button .ripple {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s ease-out;
+    pointer-events: none;
+  }
+  
+  button:active {
+    transform: scale(0.95) 1s ease-out;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  }
+
+
+button:hover {
+    transform: scale(1.05) ;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+  
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .floating-cube {
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+    z-index: 1;
+  }
+  
+  .cube {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateX(30deg) rotateY(30deg);
+    animation: rotateCube 10s infinite linear;
+  }
+  
+  .side {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  
+  /* Positioning the cube faces */
+  .front { transform: translateZ(100px); }
+  .back { transform: rotateY(180deg) translateZ(100px); }
+  .left { transform: rotateY(-90deg) translateZ(100px); }
+  .right { transform: rotateY(90deg) translateZ(100px); }
+  .top { transform: rotateX(90deg) translateZ(100px); }
+  .bottom { transform: rotateX(-90deg) translateZ(100px); }
+  
+  /* Cube Rotation Animation */
+  @keyframes rotateCube {
+    from { transform: rotateX(30deg) rotateY(30deg); }
+    to { transform: rotateX(390deg) rotateY(390deg); }
+  }
+  
+  
+  @keyframes rotateText {
+    0% {
+      transform: translate(-50%, -50%) rotateY(0deg) rotateX(0deg);
+    }
+    50% {
+      transform: translate(-50%, -50%) rotateY(180deg) rotateX(30deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotateY(360deg) rotateX(0deg);
+    }
+  }
+  
+  #particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
+  @keyframes ripple {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+
+  
